@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 350px;
+      max-height: 500px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    .header {
+      padding: 16px;
+      border-bottom: 1px solid #333;
+      background: #222;
+    }
+    .header h1 {
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header h1::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #10a37f;
+      border-radius: 50%;
+    }
+    .message-list {
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 8px;
+    }
+    .message-item {
+      padding: 12px;
+      margin: 4px 0;
+      background: #252525;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .message-item:hover {
+      background: #333;
+      transform: translateX(2px);
+    }
+    .message-number {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .message-preview {
+      font-size: 13px;
+      line-height: 1.4;
+      color: #e5e5e5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .empty-state {
+      padding: 40px 20px;
+      text-align: center;
+      color: #888;
+    }
+    .empty-state p {
+      font-size: 13px;
+    }
+    .footer {
+      padding: 12px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+    }
+    .refresh-btn {
+      background: #10a37f;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+    .refresh-btn:hover {
+      background: #0d8c6d;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>My Messages</h1>
+  </div>
+  <div id="message-list" class="message-list">
+    <div class="empty-state">
+      <p>Loading messages...</p>
+    </div>
+  </div>
+  <div class="footer">
+    Click a message to jump to it
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
